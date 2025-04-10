@@ -1,2 +1,6 @@
+# Ignores directories analyses and data
 analyses/
 data/
+
+# Ignores files with extension out
+*.out
