@@ -15,6 +15,7 @@ module load bioinfo-tools
 module load FastQC
 
 # Your commands
+# Here, FastQC/0.11.9 was used
 
 fastqc -t 2 -o /home/niemi/Genome-Analysis/analyses/dna/01_preprocessing/fastqc_trim /home/niemi/Genome-Analysis/data/dna/raw_data/*.fastq.gz
 
