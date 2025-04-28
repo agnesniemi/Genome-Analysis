@@ -23,12 +23,12 @@ final_contigs_SRR4342133=/home/niemi/Genome-Analysis/analyses/dna/02_metagenome_
 output_SRR4342129=/home/niemi/Genome-Analysis/analyses/dna/04_binning/bins_SRR4342129/bin
 output_SRR4342133=/home/niemi/Genome-Analysis/analyses/dna/04_binning/bins_SRR4342133/bin
 
-# Creating depth files (not finished, fix path to bam files)
-jgi_summarize_bam_contig_depths --outputDepth depth_SRR4342129.txt *.bam
-jgi_summarize_bam_contig_depths --outputDepth depth_SRR4342133.txt *.bam
+# Creating depth files 
+jgi_summarize_bam_contig_depths --outputDepth depth_SRR4342129.txt /home/niemi/Genome-Analysis/analyses/dna/04_bwa/aln_sorted_SRR4342129.bam
+jgi_summarize_bam_contig_depths --outputDepth depth_SRR4342133.txt /home/niemi/Genome-Analysis/analyses/dna/04_bwa/aln_sorted_SRR4342133.bam
 
-metabat -i $final_contigs_SRR4342129 -a depth_SRR4342129.txt -o $output_SRR4342129 -t 4
-metabat -i $final_contigs_SRR4342133 -a depth_SRR4342133.txt -o $output_SRR4342133 -t 4
+metabat2 -i $final_contigs_SRR4342129 -a depth_SRR4342129.txt -o $output_SRR4342129 -t 4
+metabat2 -i $final_contigs_SRR4342133 -a depth_SRR4342133.txt -o $output_SRR4342133 -t 4
 
 # Removing intermediary files
 rm depth_SRR4342129.txt
